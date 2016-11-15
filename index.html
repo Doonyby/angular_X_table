@@ -8,12 +8,15 @@
 	<script src="./module.js"></script>
 </head>
 <body>
-	<table ng-controller="multiplicationCtrl as vm">
-		<tr ng-repeat="numberA in vm.numbers">
-			<td ng-repeat="numberB in vm.numbers">
-				{{numberA * numberB}}
-			</td>
-		</tr>
-	</table>
+    <div ng-controller="multiplicationCtrl as vm" initialnumberlimit="10">
+        <input type="number" ng-model="vm.numberLimit" placeholder="Enter a number" />
+        <table>
+            <tr ng-repeat="numberA in vm.numbers()">
+                <td ng-repeat="numberB in vm.numbers()">
+                    {{ vm.compute(numberA, numberB)  }}
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
