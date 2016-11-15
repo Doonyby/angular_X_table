@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Mult Table</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="./module.js"></script>
+</head>
+<body>
+	<table ng-controller="multiplicationCtrl as vm">
+		<tr ng-repeat="numberA in vm.numbers">
+			<td ng-repeat="numberB in vm.numbers">
+				{{numberA * numberB}}
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
